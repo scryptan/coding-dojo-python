@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+
       - name: Run pytest
         uses: pavelzw/pytest-action@v2
         with:
