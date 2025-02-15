@@ -1,0 +1,17 @@
+name: Pytest
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Python dependencies
+        uses: py-actions/py-dependency-install@v4
+
+      - name: Run pytest
+        run: pytest
