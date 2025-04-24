@@ -5,7 +5,7 @@ only pytest in deps
 ## Install Python (on Ubuntu)
 
 ```sh
-sudo apt install python3 python3-venv python-pytest
+sudo apt install python3 python3-venv
 ```
 
 ## How to setup environment
