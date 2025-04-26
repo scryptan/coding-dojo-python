@@ -6,6 +6,8 @@
         if string == "":
             return 0
 
+        string = string.replace('\n', ',')
+
         try:
             string.index(',')
         except ValueError:
