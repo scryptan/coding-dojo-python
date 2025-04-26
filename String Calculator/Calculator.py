@@ -7,6 +7,9 @@
             return 0
 
         string = string.replace('\n', ',')
+        string = string.replace(' ', ',')
+        string = string.replace('|', ',')
+        string = string.replace(';', ',')
 
         try:
             string.index(',')
