@@ -1,35 +1,30 @@
 ﻿class RomanNumbers:
     def __init__(self):
-        self.roman_numerals = {
-            1: 'I',
-            5: 'V',
-            10: 'X',
-            50: 'L',
-            100: 'C',
-            500: 'D',
-            1000: 'M'
-        }
+        self.roman_numerals = [
+            (1000, 'M'),
+            (900, 'CM'),
+            (500, 'D'),
+            (400, 'CD'),
+            (100, 'C'),
+            (90, 'XC'),
+            (50, 'L'),
+            (40, 'XL'),
+            (10, 'X'),
+            (9, 'IX'),
+            (5, 'V'),
+            (4, 'IV'),
+            (1, 'I')
+        ]
 
     def int_to_roman(self, num: int) -> str:
         if not (0 < num < 4000):
             raise ValueError("Number must be between 1 and 3999")
 
-        val = [
-            1000, 900, 500, 400,
-            100, 90, 50, 40,
-            10, 9, 5, 4,
-            1
-        ]
-        syms = [
-            "M", "CM", "D", "CD",
-            "C", "XC", "L", "XL",
-            "X", "IX", "V", "IV",
-            "I"
-        ]
+        roman = ''
 
-        roman_numeral = ""
-        for i in range(len(val)):
-            count = num // val[i]
-            roman_numeral += syms[i] * count
-            num -= val[i] * count
-        return roman_numeral
+        for value, symbol in self.roman_numerals:
+            while num >= value:
+                roman += symbol
+                num -= value
+
+        return roman
